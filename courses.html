@@ -1,42 +1,402 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>courses</title>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>courses</title>
+
+   <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+
+   <!-- custom css file link  -->
+   <link rel="stylesheet" href="css/style.css">
+
 </head>
 <body>
-    <header class="header">
+
+<header class="header">
    
-        <section class="flex">
-     
-           <a href="home.html" class="logo">Educa.</a>
-     
-           <form action="search.html" method="post" class="search-form">
-              <input type="text" name="search_box" required placeholder="search courses..." maxlength="100">
-              <button type="submit" class="fas fa-search"></button>
-           </form>
-     
-           <div class="icons">
-              <div id="menu-btn" class="fas fa-bars"></div>
-              <div id="search-btn" class="fas fa-search"></div>
-              <div id="user-btn" class="fas fa-user"></div>
-              <div id="toggle-btn" class="fas fa-sun"></div>
-           </div>
-     
-           <div class="profile">
-              <img src="images/hawa.JPG" class="image" alt="">
-              <h3 class="name">hawa muhumed</h3>
-              <p class="role">studen</p>
-              <a href="profile.html" class="btn">view profile</a>
-              <div class="flex-btn">
-                 <a href="login.html" class="option-btn">login</a>
-                 <a href="register.html" class="option-btn">register</a>
-              </div>
-           </div>
-     
-        </section>
-     
-     </header>  
+   <section class="flex">
+
+      <a href="home.html" class="logo">Educa.</a>
+
+      <form action="search.html" method="post" class="search-form">
+         <input type="text" name="search_box" required placeholder="search courses..." maxlength="100">
+         <button type="submit" class="fas fa-search"></button>
+      </form>
+
+      <div class="icons">
+         <div id="menu-btn" class="fas fa-bars"></div>
+         <div id="search-btn" class="fas fa-search"></div>
+         <div id="user-btn" class="fas fa-user"></div>
+         <div id="toggle-btn" class="fas fa-sun"></div>
+      </div>
+
+      <div class="profile">
+         <img src="images/hawa.JPG" class="image" alt="">
+         <h3 class="name">hawa muhumed</h3>
+         <p class="role">studen</p>
+         <a href="profile.html" class="btn">view profile</a>
+         <div class="flex-btn">
+            <a href="login.html" class="option-btn">login</a>
+            <a href="register.html" class="option-btn">register</a>
+         </div>
+      </div>
+
+   </section>
+
+</header>   
+
+<div class="side-bar">
+
+   <div id="close-btn">
+      <i class="fas fa-times"></i>
+   </div>
+
+   <div class="profile">
+      <img src="images/hawa.JPG" class="image" alt="">
+      <h3 class="name">hawa muhumed</h3>
+      <p class="role">studen</p>
+      <a href="profile.html" class="btn">view profile</a>
+   </div>
+
+   <nav class="navbar">
+      <a href="home.html"><i class="fas fa-home"></i><span>home</span></a>
+      <a href="about.html"><i class="fas fa-question"></i><span>about</span></a>
+      <a href="courses.html"><i class="fas fa-graduation-cap"></i><span>courses</span></a>
+      <a href="teachers.html"><i class="fas fa-chalkboard-user"></i><span>teachers</span></a>
+      <a href="contact.html"><i class="fas fa-headset"></i><span>contact us</span></a>
+   </nav>
+
+</div>
+
+<section class="courses">
+
+   <h1 class="heading">our courses</h1>
+
+   <div class="box-container">
+
+      <div class="box">
+         <div class="tutor">
+            <img src="images/pic-2.jpg" alt="">
+            <div class="info">
+               <h3>john deo</h3>
+               <span>21-10-2022</span>
+            </div>
+         </div>
+         <div class="thumb">
+            <img src="images/thumb-1.png" alt="">
+            <span>10 videos</span>
+         </div>
+         <h3 class="title">complete HTML tutorial</h3>
+         <a href="playlist.html" class="inline-btn">view playlist</a>
+      </div>
+
+      <div class="box">
+         <div class="tutor">
+            <img src="images/pic-3.jpg" alt="">
+            <div class="info">
+               <h3>john deo</h3>
+               <span>21-10-2022</span>
+            </div>
+         </div>
+         <div class="thumb">
+            <img src="images/thumb-2.png" alt="">
+            <span>10 videos</span>
+         </div>
+         <h3 class="title">complete CSS tutorial</h3>
+         <a href="playlist.html" class="inline-btn">view playlist</a>
+      </div>
+
+      <div class="box">
+         <div class="tutor">
+            <img src="images/pic-4.jpg" alt="">
+            <div class="info">
+               <h3>john deo</h3>
+               <span>21-10-2022</span>
+            </div>
+         </div>
+         <div class="thumb">
+            <img src="images/thumb-3.png" alt="">
+            <span>10 videos</span>
+         </div>
+         <h3 class="title">complete JS tutorial</h3>
+         <a href="playlist.html" class="inline-btn">view playlist</a>
+      </div>
+
+      <div class="box">
+         <div class="tutor">
+            <img src="images/pic-5.jpg" alt="">
+            <div class="info">
+               <h3>john deo</h3>
+               <span>21-10-2022</span>
+            </div>
+         </div>
+         <div class="thumb">
+            <img src="images/thumb-4.png" alt="">
+            <span>10 videos</span>
+         </div>
+         <h3 class="title">complete Boostrap tutorial</h3>
+         <a href="playlist.html" class="inline-btn">view playlist</a>
+      </div>
+
+      <div class="box">
+         <div class="tutor">
+            <img src="images/pic-6.jpg" alt="">
+            <div class="info">
+               <h3>john deo</h3>
+               <span>21-10-2022</span>
+            </div>
+         </div>
+         <div class="thumb">
+            <img src="images/thumb-5.png" alt="">
+            <span>10 videos</span>
+         </div>
+         <h3 class="title">complete JQuery tutorial</h3>
+         <a href="playlist.html" class="inline-btn">view playlist</a>
+      </div>
+
+      <div class="box">
+         <div class="tutor">
+            <img src="images/pic-7.jpg" alt="">
+            <div class="info">
+               <h3>john deo</h3>
+               <span>21-10-2022</span>
+            </div>
+         </div>
+         <div class="thumb">
+            <img src="images/thumb-6.png" alt="">
+            <span>10 videos</span>
+         </div>
+         <h3 class="title">complete SASS tutorial</h3>
+         <a href="playlist.html" class="inline-btn">view playlist</a>
+      </div>
+
+      <div class="box">
+         <div class="tutor">
+            <img src="images/pic-8.jpg" alt="">
+            <div class="info">
+               <h3>john deo</h3>
+               <span>21-10-2022</span>
+            </div>
+         </div>
+         <div class="thumb">
+            <img src="images/thumb-7.png" alt="">
+            <span>10 videos</span>
+         </div>
+         <h3 class="title">complete PHP tutorial</h3>
+         <a href="playlist.html" class="inline-btn">view playlist</a>
+      </div>
+
+      <div class="box">
+         <div class="tutor">
+            <img src="images/pic-9.jpg" alt="">
+            <div class="info">
+               <h3>john deo</h3>
+               <span>21-10-2022</span>
+            </div>
+         </div>
+         <div class="thumb">
+            <img src="images/thumb-8.png" alt="">
+            <span>10 videos</span>
+         </div>
+         <h3 class="title">complete MySQL tutorial</h3>
+         <a href="playlist.html" class="inline-btn">view playlist</a>
+      </div>
+
+      <div class="box">
+         <div class="tutor">
+            <img src="images/pic-1.jpg" alt="">
+            <div class="info">
+               <h3>john deo</h3>
+               <span>21-10-2022</span>
+            </div>
+         </div>
+         <div class="thumb">
+            <img src="images/thumb-9.png" alt="">
+            <span>10 videos</span>
+         </div>
+         <h3 class="title">complete react tutorial</h3>
+         <a href="playlist.html" class="inline-btn">view playlist</a>
+      </div>
+
+   </div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<footer class="footer">
+
+   &copy; copyright @ 2025 by <span>mrs hawa. web designer</span> | all rights reserved!
+
+</footer>
+
+<!-- custom js file link  -->
+<script src="js/script.js"></script>
+<!-- <footer class="footer pt-5 mt-5">
+   <div class="container">
+     <div class=" row">
+       <div class="col-md-3 mb-4 ms-auto">
+         <div>
+           <a href="https://www.creative-tim.com/product/material-kit">
+             <img src="./assets/img/logo-ct-dark.png" class="mb-3 footer-logo" alt="main_logo">
+           </a>
+           <h6 class="font-weight-bolder mb-4">Material Kit 2</h6>
+         </div>
+         <div>
+           <ul class="d-flex flex-row ms-n3 nav">
+             <li class="nav-item">
+               <a class="nav-link pe-1" href="https://www.facebook.com/CreativeTim/" target="_blank">
+                 <i class="fab fa-facebook text-lg opacity-8"></i>
+               </a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link pe-1" href="https://twitter.com/creativetim" target="_blank">
+                 <i class="fab fa-twitter text-lg opacity-8"></i>
+               </a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link pe-1" href="https://dribbble.com/creativetim" target="_blank">
+                 <i class="fab fa-dribbble text-lg opacity-8"></i>
+               </a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link pe-1" href="https://github.com/creativetimofficial" target="_blank">
+                 <i class="fab fa-github text-lg opacity-8"></i>
+               </a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link pe-1" href="https://www.youtube.com/channel/UCVyTG4sCw-rOvB9oHkzZD1w" target="_blank">
+                 <i class="fab fa-youtube text-lg opacity-8"></i>
+               </a>
+             </li>
+           </ul>
+         </div>
+       </div>
+       <div class="col-md-2 col-sm-6 col-6 mb-4">
+         <div>
+           <h6 class="text-sm">Company</h6>
+           <ul class="flex-column ms-n3 nav">
+             <li class="nav-item">
+               <a class="nav-link" href="https://www.creative-tim.com/presentation" target="_blank">
+                 About Us
+               </a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link" href="https://www.creative-tim.com/templates/free" target="_blank">
+                 Freebies
+               </a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link" href="https://www.creative-tim.com/templates/premium" target="_blank">
+                 Premium Tools
+               </a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link" href="https://www.creative-tim.com/blog" target="_blank">
+                 Blog
+               </a>
+             </li>
+           </ul>
+         </div>
+       </div>
+       <div class="col-md-2 col-sm-6 col-6 mb-4">
+         <div>
+           <h6 class="text-sm">Resources</h6>
+           <ul class="flex-column ms-n3 nav">
+             <li class="nav-item">
+               <a class="nav-link" href="https://iradesign.io/" target="_blank">
+                 Illustrations
+               </a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link" href="https://www.creative-tim.com/bits" target="_blank">
+                 Bits & Snippets
+               </a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link" href="https://www.creative-tim.com/affiliates/new" target="_blank">
+                 Affiliate Program
+               </a>
+             </li>
+           </ul>
+         </div>
+       </div>
+       <div class="col-md-2 col-sm-6 col-6 mb-4">
+         <div>
+           <h6 class="text-sm">Help & Support</h6>
+           <ul class="flex-column ms-n3 nav">
+             <li class="nav-item">
+               <a class="nav-link" href="https://www.creative-tim.com/contact-us" target="_blank">
+                 Contact Us
+               </a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link" href="https://www.creative-tim.com/knowledge-center" target="_blank">
+                 Knowledge Center
+               </a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link" href="https://services.creative-tim.com/?ref=ct-mk2-footer" target="_blank">
+                 Custom Development
+               </a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link" href="https://www.creative-tim.com/sponsorships" target="_blank">
+                 Sponsorships
+               </a>
+             </li>
+           </ul>
+         </div>
+       </div>
+       <div class="col-md-2 col-sm-6 col-6 mb-4 me-auto">
+         <div>
+           <h6 class="text-sm">Legal</h6>
+           <ul class="flex-column ms-n3 nav">
+             <li class="nav-item">
+               <a class="nav-link" href="https://www.creative-tim.com/knowledge-center/terms-of-service/" target="_blank">
+                 Terms & Conditions
+               </a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link" href="https://www.creative-tim.com/knowledge-center/privacy-policy/" target="_blank">
+                 Privacy Policy
+               </a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link" href="https://www.creative-tim.com/license" target="_blank">
+                 Licenses (EULA)
+               </a>
+             </li>
+           </ul>
+         </div>
+       </div>
+       <div class="col-12">
+         <div class="text-center">
+           <p class="text-dark my-4 text-sm font-weight-normal">
+             All rights reserved. Copyright © <script>
+               document.write(new Date().getFullYear())
+             </script> Material Kit by <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a>.
+           </p>
+         </div>
+       </div>
+     </div>
+   </div>
+ </footer> -->
+
+   
 </body>
 </html>
