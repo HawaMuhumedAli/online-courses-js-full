@@ -88,3 +88,149 @@ document.addEventListener('DOMContentLoaded', () => {
 
    fetchUserData();
 });
+
+document.getElementById('search-form').addEventListener('submit', async function (e) {
+   e.preventDefault();
+   const query = document.getElementById('search-input').value;
+   const url = `https://youtube-v3-alternative.p.rapidapi.com/search?query=${query}&geo=US&lang=en`;
+   const options = {
+     method: 'GET',
+     headers: {
+       'x-rapidapi-key': '9452172446msh620b23d249c353fp16dad9jsn7b983901f89b',
+       'x-rapidapi-host': 'youtube-v3-alternative.p.rapidapi.com'
+     }
+   };
+ 
+   try {
+     const response = await fetch(url, options);
+     const result = await response.json();
+     displayVideos(result.data);
+   } catch (error) {
+     console.error('Error fetching search results:', error);
+   }
+ });
+ 
+ function displayVideos(videos) {
+   const videoList = document.getElementById('video-list');
+   videoList.innerHTML = '';
+   videos.forEach(video => {
+     const videoItem = document.createElement('div');
+     videoItem.className = 'video-item';
+     videoItem.innerHTML = `
+       <div class="video-thumbnail" style="background-image: url('${video.thumbnail[0].url}');"></div>
+       <div class="video-info">
+         <div class="video-title">${video.title}</div>
+         <div class="video-channel">${video.channelTitle}</div>
+       </div>
+     `;
+     videoItem.addEventListener('click', () => openModal(video.videoId));
+     videoList.appendChild(videoItem);
+   });
+ }
+ 
+ async function openModal(videoId) {
+   const modal = document.getElementById('video-modal');
+   const videoPlayer = document.getElementById('video-player');
+   const videoUrl = `https://www.youtube.com/embed/${videoId}`;
+ 
+   console.log('Opening video:', videoId, videoUrl); // Debugging information
+ 
+   videoPlayer.src = videoUrl;
+   modal.style.display = 'block';
+ 
+   videoPlayer.onerror = function () {
+     alert('This video is not available on YouTube.');
+     closeModal();
+   };
+ 
+   document.getElementById('download-mp3').onclick = async function () {
+     const url = `https://youtube-mp36.p.rapidapi.com/dl?id=${videoId}`;
+     const options = {
+       method: 'GET',
+       headers: {
+         'x-rapidapi-key': '9452172446msh620b23d249c353fp16dad9jsn7b983901f89b',
+         'x-rapidapi-host': 'youtube-mp36.p.rapidapi.com'
+       }
+     };
+ 
+     try {
+       const response = await fetch(url, options);
+       const result = await response.json();
+       if (result.status === 'ok') {
+         window.location.href = result.link;
+       } else {
+         alert('Error downloading MP3: ' + result.msg);
+       }
+     } catch (error) {
+       console.error('Error downloading MP3:', error);
+     }
+   };
+ }
+ 
+ document.getElementById('close-modal').addEventListener('click', closeModal);
+ 
+ window.onclick = function (event) {
+   const modal = document.getElementById('video-modal');
+   if (event.target == modal) {
+     closeModal();
+   }
+ };
+ 
+ function closeModal() {
+   const modal = document.getElementById('video-modal');
+   const videoPlayer = document.getElementById('video-player');
+   videoPlayer.src = '';
+   modal.style.display = 'none';
+ }
+ 
+/////
+ // Handle Form Submission
+ document.getElementById('registrationForm').addEventListener('submit', function(event) {
+  event.preventDefault(); // Prevent default form submission
+
+  // Get form data
+  const email = document.getElementById('email').value;
+  const password = document.getElementById('password').value;
+  const confirmPassword = document.getElementById('confirmPassword').value;
+  const profilePicture = document.getElementById('profilePicture').files[0];
+
+  // Validate passwords match
+  if (password !== confirmPassword) {
+     alert('Passwords do not match!');
+     return;
+  }
+
+  // Convert image to Base64
+  const reader = new FileReader();
+  reader.onload = function(event) {
+     const profilePictureBase64 = event.target.result;
+
+     // Save data to localStorage
+     const userData = {
+        email: email,
+        password: password,
+        profilePicture: profilePictureBase64
+     };
+     localStorage.setItem('userData', JSON.stringify(userData));
+
+     // Display saved data
+     displaySavedProfile();
+     alert('Registration successful!');
+  };
+  reader.readAsDataURL(profilePicture);
+});
+
+// Display saved profile from localStorage
+function displaySavedProfile() {
+  const savedData = JSON.parse(localStorage.getItem('userData'));
+  if (savedData) {
+     document.getElementById('savedEmail').textContent = `Email: ${savedData.email}`;
+     document.getElementById('savedImage').src = savedData.profilePicture;
+     document.getElementById('profilePreview').style.display = 'block';
+  } else {
+     document.getElementById('profilePreview').style.display = 'none';
+  }
+}
+
+// Load saved profile on page load
+window.onload = displaySavedProfile;
