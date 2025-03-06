@@ -1516,9 +1516,9 @@ section{
 
 .footer{
    background-color: var(--white);
-   border-top: var(--border);
+  
    position: sticky;
-   bottom: 0; left: 0; right: 0;
+   
    text-align: center;
    font-size: 2rem;
    padding:2.5rem 2rem;
@@ -1532,7 +1532,7 @@ section{
    color:var(--main-color);
 }
 
-/* 
+
 
 @media (max-width:1200px){
 
